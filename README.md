@@ -18,14 +18,5 @@ Python for Deployment
 |  https://developer.nytimes.com/|
 |  http://img.omdbapi.com/|
  
-# How to run
-### Install
-```
-pip install -r requirements.txt
-```
-## Inference:
-```
-python main.py
-```
- 
+
  
