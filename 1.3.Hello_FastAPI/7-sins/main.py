@@ -5,28 +5,41 @@ from fastapi.responses import FileResponse
 
 app = FastAPI()
 sins = {
-    "Avarice (Taknavardi)": {
-        "description": "Excessive desire for material wealth or possessions.",
+    "Sabzeh (سبزه)": {
+        "description": "Wheat, barley, mung bean, or lentil sprouts grown in a dish, symbolizing rebirth and renewal.",
         "image" : "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQh-AxJRcDz5yLgVfFA_uPIl6gww1aeEmAWM7DGaHTucBrN5JmPYkFGlVjrfQuWd_60",
     },
-    "Lying (Kosrat)":{
-      "description": "Deception, falsehood, or telling lies."
+    "Samanu (سمنو)":{
+      "description": "Sweet pudding made from germinated wheat, symbolizing power, strength, and fertility.",
+      "image" : "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQh-AxJRcDz5yLgVfFA_uPIl6gww1aeEmAWM7DGaHTucBrN5JmPYkFGlVjrfQuWd_60",
+
     },
-    "Injustice (Zolm)":{
-      "description": "Unfairness, oppression, or treating others unjustly."
+    "Senjed (سنجد)":{
+      "description": "Dried oleaster fruit, symbolizing love and compassion.",
+      "image" : "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQh-AxJRcDz5yLgVfFA_uPIl6gww1aeEmAWM7DGaHTucBrN5JmPYkFGlVjrfQuWd_60",
+
     },
-    "Envy (Hasad)":{
-      "description": "Jealousy and coveting what others have, leading to resentment."
+    "Sir (سیر)":{
+      "description": "Garlic, symbolizing medicine and health.",
+       "image" : "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQh-AxJRcDz5yLgVfFA_uPIl6gww1aeEmAWM7DGaHTucBrN5JmPYkFGlVjrfQuWd_60",
+
     },
-    "Rudeness (Bazgasht)":{
-      "description": "Lack of manners, disrespect, or impoliteness."
+    "Sib (سیب)":{
+      "description": "Apple, symbolizing beauty and health.",
+      "image" : "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQh-AxJRcDz5yLgVfFA_uPIl6gww1aeEmAWM7DGaHTucBrN5JmPYkFGlVjrfQuWd_60",
+
     },
-    "Ignorance (Nadani)":{
-      "description": "Lack of knowledge, unawareness, or being uninformed."
+    "Somaq (سماق)":{
+      "description": "Sumac berries, symbolizing the sunrise and the victory of light over darkness.",
+              "image" : "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQh-AxJRcDz5yLgVfFA_uPIl6gww1aeEmAWM7DGaHTucBrN5JmPYkFGlVjrfQuWd_60",
+
     },
-    "Oppression (Sarvand)":{
-      "description": "Imposing one's will or power on others, often in a cruel or harsh manner."
+    "Serkeh (سرکه)":{
+      "description": "Vinegar, symbolizing patience and wisdom.",
+              "image" : "https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQh-AxJRcDz5yLgVfFA_uPIl6gww1aeEmAWM7DGaHTucBrN5JmPYkFGlVjrfQuWd_60",
+
     }
+
 }
 
 
@@ -35,17 +48,17 @@ sins = {
 def read_root():
     return "Hello, welcome to 7-Sins api. In this api, some information about 7 major sins is said"
 
-@app.get("/sins")
+@app.get("/7sins")
 def get_sins():
     return sins
     
 
-@app.get("/sins/{name_sins}/")
+@app.get("/7sins/{name_sins}/")
 def get_name(name_sins: str):
     return sins[name_sins]
 
 
-@app.get("/sins/{name_sins}/image")
+@app.get("/7sins/{name_sins}/image")
 def get_image(name_sins: str):
     url_images= sins[name_sins]
     url_image = url_images["image"]
