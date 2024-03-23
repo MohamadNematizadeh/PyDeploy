@@ -3,7 +3,7 @@
 
 
 # API Solar System 🪐
-In this api there is about solar system plants
+In this api there is about solar system planet
 You can run the  [API Solar System](https://pydeploy-3bnu.onrender.com/docs)
 
 # API 7-sins
