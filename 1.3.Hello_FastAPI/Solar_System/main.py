@@ -4,7 +4,7 @@ from urllib.request import urlretrieve
 from fastapi.responses import FileResponse
 
 app = FastAPI()
-planet = planet = json.load(open("jsons/planet.json"))
+planet = json.load(open("jsons/planet.json"))
 
    
 @app.get("/")
