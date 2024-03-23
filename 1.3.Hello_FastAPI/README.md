@@ -8,7 +8,7 @@ You can run the  [API Solar System](https://pydeploy-3bnu.onrender.com/docs)
 
 # API 7-sins
 In this api, some information about 7 major sins is sai
-You can run the   [API Solar System](https://pydeploy-1.onrender.com/docs)
+You can run the   [API 7-sins](https://pydeploy-1.onrender.com/docs)
 
 # How to Install
 Run this command:
