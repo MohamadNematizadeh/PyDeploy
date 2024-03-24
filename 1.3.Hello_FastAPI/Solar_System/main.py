@@ -8,7 +8,7 @@ from fastapi.responses import StreamingResponse
 
 
 app = FastAPI()
-plants = plants = json.load(open("jsons/planet.json"))
+plants = json.load(open("jsons/planet.json"))
 
    
 @app.get("/")
