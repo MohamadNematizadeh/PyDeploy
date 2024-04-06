@@ -6,7 +6,7 @@ from fastapi import FastAPI,File,Form,UploadFile,HTTPException
 from fastapi.responses import StreamingResponse
 from face.src.FaceIdentification import FaceIdentification
 from insightface.app import FaceAnalysis
-from databes import Table
+from database import Table
 
 db = Table()
 app = FastAPI()
