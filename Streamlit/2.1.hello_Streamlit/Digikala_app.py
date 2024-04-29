@@ -9,7 +9,7 @@ with st.sidebar:
 
     st.write("This App can get a complete data from Digikala and displays the sales details of Digikala products")
 
-digikala = pd.read_csv("data/digikala-orders.csv")
+digikala = pd.read_csv("https://github.com/Kiana-Jahanshid/PyLearn_MachineLearning/blob/main/Assignment_39_DataScience/inputs/digikala-orders.csv")
 digikala["DateTime_CartFinalize"] = pd.to_datetime(digikala["DateTime_CartFinalize"])
 digikala["YearMonth"] = digikala["DateTime_CartFinalize"].dt.to_period('M')
 digikala
