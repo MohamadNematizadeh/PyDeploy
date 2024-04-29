@@ -5,7 +5,7 @@ import streamlit as st
 st.title("Digikala App")
 # Load data
 with st.sidebar:
-    st.image("imgae/Digikala-logo.png", use_column_width=True)
+    st.image("https://github.com/MohamadNematizadeh/PyDeploy/blob/main/Streamlit/2.1.hello_Streamlit/imgae/Digikala-logo.png?raw=true", use_column_width=True)
 
     st.write("This App can get a complete data from Digikala and displays the sales details of Digikala products")
 
