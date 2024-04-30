@@ -5,20 +5,23 @@ import streamlit as st
 st.title("Digikala App")
 # Load data
 with st.sidebar:
-    st.image("https://github.com/MohamadNematizadeh/PyDeploy/blob/main/Streamlit/2.1.hello_Streamlit/imgae/Digikala-logo.png?raw=true", use_column_width=True)
+    st.image("imgae/Digikala-logo.png", use_column_width=True)
 
     st.write("This App can get a complete data from Digikala and displays the sales details of Digikala products")
+uploaded_file = st.file_uploader("Upload a .csv file", type=["csv"])
 
-digikala = pd.read_csv("https://raw.githubusercontent.com/Kiana-Jahanshid/PyLearn_MachineLearning/main/Assignment_39_DataScience/inputs/digikala-orders.csv")
-digikala["DateTime_CartFinalize"] = pd.to_datetime(digikala["DateTime_CartFinalize"])
-digikala["YearMonth"] = digikala["DateTime_CartFinalize"].dt.to_period('M')
-digikala
+if uploaded_file is not None:
+    # Read CSV file into pandas DataFrame
+    digikala = pd.read_csv(uploaded_file)
+    digikala["DateTime_CartFinalize"] = pd.to_datetime(digikala["DateTime_CartFinalize"])
+    digikala["YearMonth"] = digikala["DateTime_CartFinalize"].dt.to_period('M')
+    digikala
 
-orders = digikala.groupby("YearMonth")["Quantity_item"].sum().reset_index()
-orders
+    orders = digikala.groupby("YearMonth")["Quantity_item"].sum().reset_index()
+    orders
 
-x_axis = orders["YearMonth"].astype(str)
-y_axis = orders["Quantity_item"]
+    x_axis = orders["YearMonth"].astype(str)
+    y_axis = orders["Quantity_item"]
 
-st.title("Sales chart of Digikala products")
-st.line_chart(data=orders, x="YearMonth", y='Quantity_item', use_container_width=True)
+    st.title("Sales chart of Digikala products")
+    st.line_chart(data=orders, x="YearMonth", y='Quantity_item', use_container_width=True)
