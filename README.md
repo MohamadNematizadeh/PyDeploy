@@ -1,22 +1,7 @@
 # PyDeploy
 Python for Deployment
 
-# 1.1.Introduction
-# based weather app ☀️⛅️
-|          Home page        |  Main page |  |  
-| :----------------------:   | :-----------: | :--------: |
-| ![screen shot](https://github.com/MohamadNematizadeh/PyDeploy/blob/main/1.1.Introduction/based%20weather%20app/photo1709675165.jpeg?raw=true)     | ![screen shot](https://github.com/MohamadNematizadeh/PyDeploy/blob/main/1.1.Introduction/based%20weather%20app/photo1709675189.jpeg?raw=true)|
-
-## Using different programming language to API
-|     programming     | API |  |  
-| :----------------------:   | :-----------: | :--------: |
-|  Python | e.g. Fruit 🍉, Number 🔢, Harry Potter ⚡️, Quran|
-|  PHP | e.g. Fruit 🍉, Number 🔢, Harry Potter ⚡️, Quran|
-## API with Auth token 🔐
-|     API token    |
-|:--------: |
-|  https://developer.nytimes.com/|
-|  http://img.omdbapi.com/|
- 
+[<img src="readme_files/python.svg" alt="python" height=40>](https://www.python.org)
+[<img src="readme_files/fastapi.png" alt="fastapi" height=40>](https://fastapi.tiangolo.com)
 
  
