@@ -6,8 +6,16 @@
 
 ## About The Projects
 <br>
-
 <img src="static/images/websit.png" alt="about">
-front : html , css  , botostart , JavaScript
-It has been tried to clean the code
-happy we with star and follow in linkedin , enjoy coding :)
+# How to Install
+Run this command:
+```
+pip install -r requirements.txt
+```
+Download [model](https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8n-cls.pt)
+
+## How to run:
+Run this command:
+```
+flask run --debug
+```
