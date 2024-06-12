@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+
+{% block title %} register | Face Analyez {% endblock %}
+
+{% block content %}
+<section class="sub-banner01 banner-top02 position-relative float-start w-100">
+    <div class="container">
+      <h2 class="text-center text-white">login websit</h2>
+      <nav>
+        <ol class="breadcrumb justify-content-center mt-4">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">login</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+  <section class="contact-us-page d-inline-block w-100 my-5">
+    <div class="row justify-content-center">
+    <div class="col-4">
+        <div class="card text-bg-primary mb-3">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+                <form method="post">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">first name</label>
+                    <input name = "first_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">last_name</label>
+                    <input name = "last_name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input name = "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">username</label>
+                    <input name = "username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">age</label>
+                    <input name = "age" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">city</label>
+                    <input name = "city" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">country</label>
+                    <input name = "country" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">password</label>
+                      <input name = "password" ype="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password 2</label>
+                      <input name="confirmpassword" type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+          </div>
+    </div>
+  </div>
+  </section>
+  {%endblock%}
