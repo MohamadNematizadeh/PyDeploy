@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block title %} Home | BMR Calculator  {% endblock %}
+
+{% block content %}
+<section class="sub-banner01 banner-top02 position-relative float-start w-100">
+    <div class="container">
+        <h2 class="text-center text-white">BMR Calculator</h2>
+        <nav>
+            <ol class="breadcrumb justify-content-center mt-4">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">BMR Calculator</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+<section class="contact-us-page d-inline-block w-100 my-5">
+    <div class="container">
+       <div class="container">
+           <div class="row g-lg-5">
+               <div class="col-lg-5 col-xl-4">
+                   <div class="cm-text-n">
+                       <h3 class="text-white">You use energy no matter what you're doing, even when sleeping. 😴 The BMR Calculator will calculate your Basal Metabolic Rate (BMR); the number of calories you'd burn if you stayed in bed all day.</h3>
+                   </div>
+               </div>
+               <div class="col-lg-7 col-xl-8">
+                   <div class="conatct-form-div mb-5 mt-5 mt-lg-0">
+                       <h6 class="mb-0 subt-text">BMR Calculator</h6>
+                       <form method="post">
+                         <div class="row mt-4">
+                             <div class="col-lg-6">
+                                <select class="form-select form-select-lg mb-3" name="gender" aria-label="Large select example">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                  </select>
+                             </div>
+                             <div class="col-lg-6">
+                               <input type="text" id="weight" name="weight" class="form-control" placeholder="Weight (kg)">
+                             </div>
+                             <div class="col-lg-6">
+                               <input type="text" id="height" name="height" class="form-control" placeholder="Height (cm)">
+                           </div>
+                           <div class="col-lg-6">
+                            <input type="text" name="age" class="form-control" placeholder="Age">
+                        </div>
+                           <div class="col-lg-12">
+                               <input type="submit" name="submit" class="btn subimt-message" value="Submit">
+                           </div>
+                         </div>
+                      </form>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</section>
+{% endblock %}
