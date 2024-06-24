@@ -6,7 +6,8 @@
 
 ## About The Projects
 <br>
-<img src="static/images/websit.png" alt="about">
+<img src="static/images/screencapture.png" alt="about">
+
 
 # How to Install
 
