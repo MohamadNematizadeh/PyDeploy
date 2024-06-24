@@ -5,13 +5,14 @@ from flask import Flask, jsonify, flash, render_template, request, redirect, url
 from pydantic import ValidationError
 from ultralytics import YOLO
 from PIL import Image
+from deepface import DeepFace
 
 from model import LoginModel,RegisterModel
 from data import Data
 
-app = Flask(__name__)
+app = Flask("Face_Analyez")
 
-app.config['UPLOAD_FOLDER'] = 'uploads' 
+app.config['UPLOAD_FOLDER'] = 'static/uploads' 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app.secret_key = 'supersecretkey'
 
@@ -80,7 +81,7 @@ def login():
         
         flash("Welcome, you are logged in")
         flask_session["user_id"] = user.id
-        return redirect(url_for("upload"))
+        return render_template('serevece.html')
     flash("Password is incorrect", "#ab0a0a")
     return render_template('login.html')
 
@@ -94,20 +95,20 @@ def upload():
         if file.filename == '':
             return redirect(url_for("upload"))
         else:
-            
             if file and allowed_file(file.filename):
                 save_pth = os.path.join(app.config["UPLOAD_FOLDER"], file.filename)
+                print(save_pth)
                 file.save(save_pth)
                 print(save_pth)
-                model = YOLO("model/yolov8n-cls.pt")
-                image = Image.open(save_pth)
-                results = model(image) 
-                result_image = results[0].plot() 
-                for result in results:
-                    print(result)  
-                    results = result.names[result.probs.top1]
+                result = DeepFace.analyze(
+                        img_path = save_pth, 
+                        actions = ['age'],
+                    )
+                age = result[0]['age']
+            print(save_pth)
 
-            return render_template("result.html",result=results)       
+            return render_template("result.html",result=age,image=save_pth )   
+           
 
 @app.route("/BMR",methods=['GET','POST'])
 def  calculator_BMR():
@@ -130,6 +131,29 @@ def  calculator_BMR():
             return "Invalid gender. Please select 'Male' or 'Female'."
         
         return render_template("bmr_result.html", bmr=bmr)
+
+
+@app.route("/read-yore-mind" , methods=["GET","POST"])
+def read_yore_mind():
+    if request.method == "POST":
+       number = request.form["number"]
+       return redirect(url_for("read_yore_mind_result",number=number))
+
+    return render_template("read-yore-mind.html")
+@app.route("/mediapipe",methods=["GET"])
+def rmediapipe():
+    if request.method == "GET":
+        return render_template("mediapipe.html")
+
+
+@app.route("/read-yore-mind/result")
+def read_yore_mind_result():
+    number = request.args.get("number")
+    return render_template("read-yore-mind-result.html",number=number)
+    
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

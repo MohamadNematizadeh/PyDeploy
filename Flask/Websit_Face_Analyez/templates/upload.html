@@ -7,27 +7,11 @@
 <section class="sub-banner01 banner-top02 position-relative float-start w-100">
 	<div class="container">
 
-		<h2 class="text-center text-white">Upload file</h2>
-		<nav>
-			<ol class="breadcrumb justify-content-center mt-4">
-				<li class="breadcrumb-item"><a href="#">Home</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Upload file</li>
-			</ol>
-		</nav>
+		<h2 class="text-center text-white">آپلود فایل</h2>
+
 	</div>
 </section>
-{% with messages = get_flashed_messages(with_categories=True) %}
-{% if messages %}
-{% for category, message in messages %}
-<div class="row g-lg-5">
-  <div class="col-lg-5 col-xl-4">
-	<div class="cm-text-n" style="background:'{{ category }}';">
-	  <h1 class="text-white text-center">{{ message }}</h1>
-	</div>
-  </div>
-  {% endfor %}
-  {% endif %}
-  {% endwith %}
+
 <style>
 	#drop-area {
 		border: 2px dashed #ccc;
@@ -46,26 +30,39 @@
 			<div class="row g-lg-5">
 				<div class="col-lg-5 col-xl-4">
 					<div class="cm-text-n">
-						<h3 class="text-white">Upload file</h3>
-					</div>
-				</div>
-				<div class="col-lg-7 col-xl-8">
-					<div class="container py-4 px-3 mx-auto ">
-						<div class="conatct-form-div mb-5 mt-5 mt-lg-0">
-							<div id="drop-area">
-								<div class="container py-4 px-3 mx-auto ">
-									<div class="mb-3">
-										<form method="post" enctype="multipart/form-data">
-											<label for="file-input" class="form-label">
-												<p class="text-white ">Multiple files input example</p>
-											</label>
-											<input class="form-control" type="file" name="file" id="file-input"
-												multiple>
-											<input type="submit" name="submit"
-												class=" btn subimt-messagebtn btn-primary form-control" value="Submit">
-										</form>
+						{% with messages = get_flashed_messages(with_categories=True) %}
+							{% if messages %}
+								{% for category, message in messages %}
+								<div class="row g-lg-5">
+									<div class="col-lg-5 col-xl-4">
+										<div class="cm-text-n" style="background:'{{ category }}';">
+											<h1 class="text-white text-center">{{ message }}</h1>
+										</div>
 									</div>
+									{% endfor %}
+								{% endif %}
+							{% endwith %}
+						</div>
+					</div>
+					<div class="col-lg-7 col-xl-8">
+						<div class="container py-4 px-3 mx-auto ">
+							<div class="conatct-form-div mb-5 mt-5 mt-lg-0">
+								<div id="drop-area">
+									<div class="container py-4 px-3 mx-auto ">
+										<div class="mb-3">
+											<form method="post" enctype="multipart/form-data">
+												<label for="file-input" class="form-label">
+													<p class="text-white "> فایلتون به صورت عکس وارد کنید</p>
+												</label>
+												<input class="form-control" type="file" name="file" id="file-input"
+													multiple>
+												<input type="submit" name="submit"
+													class=" btn subimt-messagebtn btn-primary form-control"
+													value="ارسال کردن">
+											</form>
+										</div>
 
+									</div>
 								</div>
 							</div>
 						</div>
@@ -73,6 +70,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
 </section>
 {% endblock %}
