@@ -31,16 +31,16 @@
 				<div class="col-lg-5 col-xl-4">
 					<div class="cm-text-n">
 						{% with messages = get_flashed_messages(with_categories=True) %}
-							{% if messages %}
-								{% for category, message in messages %}
-								<div class="row g-lg-5">
-									<div class="col-lg-5 col-xl-4">
-										<div class="cm-text-n" style="background:'{{ category }}';">
-											<h1 class="text-white text-center">{{ message }}</h1>
-										</div>
-									</div>
-									{% endfor %}
-								{% endif %}
+						{% if messages %}
+						{% for category, message in messages %}
+						<div class="row g-lg-5">
+							<div class="col-lg-5 col-xl-4">
+								<div class="cm-text-n" style="background:'{{ category }}';">
+									<h1 class="text-white text-center">{{ message }}</h1>
+								</div>
+							</div>
+							{% endfor %}
+							{% endif %}
 							{% endwith %}
 						</div>
 					</div>

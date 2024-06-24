@@ -23,5 +23,17 @@ Download [model](https://github.com/ultralytics/assets/releases/download/v8.2.0/
 Run this command:
 
 ```
-flask run --debug
+flask run
+```
+## How to run Docketfile:
+
+Run this command:
+
+```
+docker build -t  WebsitFaceAnalyez
+```
+Run this command:
+
+```
+docker run -p 8080:5000
 ```

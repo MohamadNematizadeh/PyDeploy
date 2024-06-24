@@ -1,12 +1,9 @@
 
 import os
 
-from flask import Flask, jsonify, flash, render_template, request, redirect, url_for, session as flask_session
+from flask import Flask, flash, render_template, request, redirect, url_for, session as flask_session
 from pydantic import ValidationError
-from ultralytics import YOLO
-from PIL import Image
 from deepface import DeepFace
-
 from model import LoginModel,RegisterModel
 from data import Data
 
@@ -81,7 +78,7 @@ def login():
         
         flash("Welcome, you are logged in")
         flask_session["user_id"] = user.id
-        return render_template('serevece.html')
+        return render_template('service.html')
     flash("Password is incorrect", "#ab0a0a")
     return render_template('login.html')
 
