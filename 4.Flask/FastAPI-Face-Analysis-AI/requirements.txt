@@ -1,0 +1,9 @@
+fastapi[standard]
+starlette
+uvicorn
+pydantic
+onnxruntime
+numpy
+opencv-python
+scikit-image
+numpy
