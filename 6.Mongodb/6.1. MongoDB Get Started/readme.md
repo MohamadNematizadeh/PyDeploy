@@ -5,3 +5,13 @@
 ## How to run:
 
 Run in file  ``pymongdb.ipynb``
+
+## Docker :
+install docker mongo 
+``
+sudo docker pull mongo
+``
+run mongodb in docer
+``
+sudo docker run --name pymongodb  -d mongo
+``
