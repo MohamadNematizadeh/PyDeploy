@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+mongoengine
+passlib[bcrypt]
+scikit-learn
+skl2onnx
+onnxruntime
+python-multipart
