@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لیست سوالات</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <header class="header">
+        <h1>سؤالات موجود</h1>
+    </header>
+    <main class="container">
+        {% if latest_question_list %}
+        <ul class="questions-list">
+            {% for question in latest_question_list %}
+            <li class="question-item">
+                <a href="{% url 'polls:detail' question.id %}" class="question-link">
+                    <span class="question-icon"> {{ question.id }}</span>
+                    {{ question.question_text }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="no-questions">هیچ سوالی برای نمایش موجود نیست.</p>
+        {% endif %}
+    </main>
+    <footer class="footer">
+        <p>برنامه نویس: <a href="https://github.com/MohamadNematizadeh" target="_blank" class="footer-link">محمد نعمتی
+                زاده</a> | ساخته شده با Django | کپی‌رایت 2024 ©</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

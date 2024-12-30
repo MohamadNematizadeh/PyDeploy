@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رأی‌گیری</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>🗳️ رأی‌گیری</h1>
+    </header>
+    <main class="container">
+        <div class="question-card">
+            <h2 class="question-title">{{ question.question_text }}</h2>
+            <form action="{% url 'polls:vote' question.id %}" method="post" class="vote-form">
+                {% csrf_token %}
+                <fieldset>
+                    <legend>لطفاً انتخاب خود را مشخص کنید:</legend>
+                    {% if error_message %}
+                    <p class="error-message">{{ error_message }}</p>
+                    {% endif %}
+                    <ul class="choices-list">
+                        {% for choice in question.choice_set.all %}
+                        <li class="choice-item">
+                            <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}"
+                                class="choice-radio">
+                            <label for="choice{{ forloop.counter }}" class="choice-label">{{ choice.choice_text
+                                }}</label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </fieldset>
+                <button type="submit" class="vote-button">
+                    <i class="fa fa-paper-plane"></i> ثبت رأی
+                </button>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>برنامه نویس: <a href="https://github.com/MohamadNematizadeh" target="_blank" class="footer-link">محمد نعمتی
+                زاده</a> | ساخته شده با Django | کپی‌رایت 2024 ©</p>
+    </footer>
+
+</body>
+
+</html>

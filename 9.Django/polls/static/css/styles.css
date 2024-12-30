@@ -1,0 +1,165 @@
+/* Define fonts with @font-face */
+@font-face {
+    font-family: 'IRANSans-bold';
+    src: url("/polls/static/font/IRANSans(FaNum)_Black.ttf") format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'IRANSans-light';
+    src: url("/polls/static/font/IRANSans(FaNum)_Light.ttf") format('truetype');
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: 'IRANSans-medium';
+    src: url("/polls/static/font/IRANSans(FaNum)_Medium.ttf") format('truetype');
+    font-weight: medium;
+}
+
+@font-face {
+    font-family: 'IRANSans-ultralight';
+    src: url("/polls/static/font/IRANSans(FaNum)_UltraLight.ttf") format('truetype');
+    font-weight: light;
+}
+
+/* Global Styles */
+body {
+    font-family: 'IRANSans-medium', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    background: linear-gradient(to bottom, #f0f4f8, #d9e6f2);
+    color: #333;
+}
+
+/* Container for central content */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header section */
+.header {
+    text-align: center;
+    padding: 20px 0;
+    background: #007bff;
+    color: #ffffff;
+    border-radius: 0 0 15px 15px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-family: 'IRANSans-bold', Arial, sans-serif;
+}
+
+/* Footer section */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Question List Styling */
+.questions-list {
+    list-style: none;
+    padding: 0;
+}
+
+.question-item {
+    margin: 10px 0;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.question-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.question-link {
+    display: block;
+    padding: 15px;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: 'IRANSans-medium', Arial, sans-serif;
+}
+
+.question-link:hover {
+    color: #007bff;
+}
+
+.question-icon {
+    margin-left: 8px;
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+/* Voting Form Styling */
+.vote-form {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.vote-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'IRANSans-medium', Arial, sans-serif;
+}
+
+.vote-button:hover {
+    background: #0056b3;
+}
+
+/* Choices list */
+.choices-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.choices-list li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.choice-radio {
+    margin-right: 10px;
+    accent-color: #007bff;
+}
+
+.choice-label {
+    font-size: 1.1rem;
+    color: #333;
+    font-family: 'IRANSans-light', Arial, sans-serif;
+}
+
+.footer-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
