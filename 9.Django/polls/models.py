@@ -1,17 +1,45 @@
+import datetime
 from django.db import models
+from django.contrib import admin
+from django.utils import timezone
+import jdatetime  # اضافه کردن jdatetime برای تبدیل تاریخ
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField("date published")
+
     def __str__(self):
         return self.question_text
+
     def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
+
+    @admin.display(
+        boolean=True,
+        ordering="pub_date",
+        description="Published recently?",
+    )
+    def was_published_recently(self):
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.pub_date <= now
+
+    def pub_date_jalali(self):
+        """
+        تبدیل تاریخ میلادی به شمسی
+        """
+        jalali_date = jdatetime.datetime.fromgregorian(
+            datetime=self.pub_date
+        )
+        return jalali_date.strftime("%Y/%m/%d %H:%M:%S")
+
+    pub_date_jalali.short_description = "تاریخ انتشار (شمسی)"
 
 
 class Choice(models.Model):
-    def __str__(self):
-        return self.choice_text
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.choice_text
