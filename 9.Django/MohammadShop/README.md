@@ -6,7 +6,7 @@ A simple e-commerce website built using Django. This project includes features l
 
 You can check out the live version of the website here:
 
-[Visit the Shop](http://your-live-shop-link.com)
+[Visit the Shop](https://mohammadshop.liara.run/)
 
 ## Screenshots
 
