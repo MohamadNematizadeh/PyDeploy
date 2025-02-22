@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+{% load static %}
+
+<style>
+    /* انیمیشن ساده برای نمایش اطلاعات */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s ease-in-out;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+<div class="max-w-md mx-auto bg-white rounded-xl shadow-lg overflow-hidden mt-10 p-6 fade-in">
+    <!-- تصویر کاربر -->
+    <div class="flex justify-center">
+        <img class="w-24 h-24 rounded-full border-4 border-blue-400 shadow-md" src="{% static 'images/user-avatar.png' %}" alt="User Avatar">
+    </div>
+
+    <!-- اطلاعات کاربر -->
+    <div class="text-center mt-4">
+        <h2 class="text-2xl font-semibold text-gray-700">{{ user.username }}</h2>
+        <p class="text-gray-500">{{ user.email }}</p>
+        <p class="text-gray-500">{{ user.phone }}</p>
+        <p class="text-gray-500">{{ user.address }}</p>
+    </div>
+
+    <!-- دکمه خروج -->
+    <div class="mt-6 flex justify-center">
+        <a href="{% url 'signout' %}" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg shadow-md transition duration-300">
+            خروج از حساب کاربری
+        </a>
+    </div>
+</div>
+
+<script>
+    // انیمیشن fade-in هنگام بارگذاری صفحه
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(() => {
+            document.querySelector(".fade-in").classList.add("visible");
+        }, 200);
+    });
+</script>
+
+{% endblock %}

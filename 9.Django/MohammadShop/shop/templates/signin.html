@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+{% load static %}
+<style>
+
+
+      /* استایل فیلدهای فرم */
+      form p {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    form label {
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 5px;
+    }
+
+    form input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    /* افکت هنگام فوکوس روی فیلدها */
+    form input:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+        outline: none;
+    }
+</style>
+<div class="flex justify-center items-center min-h-screen bg-gray-100">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+        <h2 class="text-2xl font-semibold text-center text-gray-700 mb-6">ورود به حساب کاربری</h2>
+
+        <form method="post" class="space-y-6">
+            {% csrf_token %}
+            
+            <!-- فیلدهای فرم -->
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+
+            <!-- دکمه ورود -->
+            <button type="submit" class="w-full bg-[#0EB3A2] text-white py-2 rounded-lg hover:bg-[#0C978A] transition duration-300">
+                ورود
+            </button>
+        </form>
+
+        <!-- لینک ثبت‌نام -->
+        <div class="text-center mt-4">
+            <p class="text-gray-600">حساب کاربری ندارید؟
+                <a href="{% url 'signup' %}" class="text-[#0EB3A2] font-semibold hover:underline transition duration-300">ثبت‌نام کنید</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block content %}
+{% load static %}
+
+<style>
+    /* استایل کلی فرم */
+    form {
+        max-width: 400px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* عنوان فرم */
+    h2 {
+        text-align: center;
+        color: #333;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    /* استایل فیلدهای فرم */
+    form p {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    form label {
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 5px;
+    }
+
+    form input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+
+    /* افکت هنگام فوکوس روی فیلدها */
+    form input:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+        outline: none;
+    }
+
+    /* استایل دکمه ثبت‌نام */
+    button {
+        width: 100%;
+        background: #3b82f6;
+        color: white;
+        font-size: 16px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        background: #2563eb;
+    }
+</style>
+
+<form method="post">
+    {% csrf_token %}
+    
+    <h2>ثبت نام</h2>
+
+    {{ form.as_p }}
+
+    <button type="submit">ثبت نام</button>
+</form>
+
+{% endblock %}

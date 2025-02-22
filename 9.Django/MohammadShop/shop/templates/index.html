@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block content %}
+{% load static %}
+
+
+<!-- Product Categories Section -->
+<section class="product-categories py-12">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-6">دسته بندی محصولات</h2>
+        <div class="categories flex justify-center space-x-6">
+            <div class="category hover:bg-[#0EB3A2] p-4 rounded-xl transition-all">
+                <img src=" {% static 'image/5.png' %}" alt="هدایا" class="w-20 mx-auto mb-2">
+                <p>هدایا</p>
+            </div>
+            <div class="category hover:bg-[#0EB3A2] p-4 rounded-xl transition-all">
+                <img src="{% static 'image/2.png' %}" alt="زیورآلات" class="w-20 mx-auto mb-2">
+                <p>زیورآلات فیروزه کوبی</p>
+            </div>
+            <div class="category hover:bg-[#0EB3A2] p-4 rounded-xl transition-all">
+                <img src="{% static 'image/plate.png' %}" alt="دکوراسیون" class="w-20 mx-auto mb-2">
+                <p>دکوراسیون منزل</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Product List Section -->
+<section class="product-list py-12 bg-[#F5DBB5]">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-6">محصولات</h2>
+        <div class="products grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="product bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow">
+                <img src="product1.jpg" alt="محصول 1" class="w-full h-56 object-cover">
+                <div class="p-4">
+                    <p class="text-xl font-semibold">محصول فیروزه کوبی 1</p>
+                    <button
+                        class="mt-4 bg-[#0EB3A2] text-white py-2 px-4 rounded-md hover:bg-[#0EB3A2] hover:text-[#F5DBB5] transition-colors">مشاهده
+                        بیشتر</button>
+                </div>
+            </div>
+            <div class="product bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow">
+                <img src="product2.jpg" alt="محصول 2" class="w-full h-56 object-cover">
+                <div class="p-4">
+                    <p class="text-xl font-semibold">محصول فیروزه کوبی 2</p>
+                    <button
+                        class="mt-4 bg-[#0EB3A2] text-white py-2 px-4 rounded-md hover:bg-[#0EB3A2] hover:text-[#F5DBB5] transition-colors">مشاهده
+                        بیشتر</button>
+                </div>
+            </div>
+            <div class="product bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow">
+                <img src="product3.jpg" alt="محصول 3" class="w-full h-56 object-cover">
+                <div class="p-4">
+                    <p class="text-xl font-semibold">محصول فیروزه کوبی 3</p>
+                    <button
+                        class="mt-4 bg-[#0EB3A2] text-white py-2 px-4 rounded-md hover:bg-[#0EB3A2] hover:text-[#F5DBB5] transition-colors">مشاهده
+                        بیشتر</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

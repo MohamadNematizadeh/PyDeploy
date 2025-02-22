@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نیاتابش</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Vazir', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-in-out;
+        }
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-[#0EB3A2] py-4 text-white shadow-lg">
+        <div class="container mx-auto flex items-center justify-between px-6">
+            <img src="shop/static/image/logo.png" alt="نیاتابش" class="w-32 animate-pulse">
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-[#F5DBB5] transition-colors">خانه</a></li>
+                    <li><a href="#" class="hover:text-[#F5DBB5] transition-colors">محصولات</a></li>
+                    <li><a href="#" class="hover:text-[#F5DBB5] transition-colors">درباره ما</a></li>
+                    <li><a href="#" class="hover:text-[#F5DBB5] transition-colors">تماس با ما</a></li>
+                </ul>
+            </nav>
+            <input type="text" placeholder="جستجو..."
+                class="p-2 rounded-md w-48 focus:outline-none focus:ring-2 focus:ring-[#F5DBB5]">
+        </div>
+    </header>
+    
+    <section class="main-banner relative fade-in">
+        <div class="container mx-auto px-4 py-8">
+            <div class="relative w-full mb-8">
+                <img src="shop/static/image/main-slider.png" alt="Slider Image" class="w-full h-auto rounded-lg shadow-lg">
+                <div class="absolute inset-4 flex flex-col items-start justify-center text-white bg-black bg-opacity-50 p-8">
+                    <h2 class="text-4xl font-semibold mb-2">تــــــــــولــــــــید انــــــــــواع</h2>
+                    <h2 class="text-3xl font-bold text-blue-300">مــحصــولات فیـــروزه‌کـــــوبی</h2>
+                    <a href="#" class="mt-4 px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-all">
+                        مـشــاهــــده محــصـــولات
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-list py-12 bg-[#F5DBB5] fade-in">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-6">محصولات</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow transform hover:scale-105">
+                    <img src="product1.jpg" alt="محصول 1" class="w-full h-56 object-cover">
+                    <div class="p-4">
+                        <p class="text-xl font-semibold">محصول فیروزه کوبی 1</p>
+                        <button class="mt-4 bg-[#0EB3A2] text-white py-2 px-4 rounded-md hover:bg-[#F5DBB5] hover:text-[#0EB3A2] transition-colors">
+                            مشاهده بیشتر
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#0EB3A2] py-6 text-white text-center">
+        <div class="container mx-auto">
+            <p>© 2025 تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            gsap.from("header", { duration: 1, y: -50, opacity: 0, ease: "power2.out" });
+            
+            const fadeElements = document.querySelectorAll(".fade-in");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            });
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

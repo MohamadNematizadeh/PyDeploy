@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نیاتابش</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
+</head>
+<style>
+        @font-face {
+        font-family: 'IRANSans-bold';
+        src: url("static/font/IRANSans(FaNum)_Black.ttf");
+        font-weight: bold;
+    }
+
+    @font-face {
+        font-family: 'IRANSans-light';
+        src: url("static/font/IRANSans(FaNum)_Light.ttf");
+        font-weight: lighter;
+    }
+
+    @font-face {
+        font-family: 'IRANSans-medium';
+        src: url("{% static 'font/IRANSans(FaNum)_Medium.ttf' %}");
+        font-weight: medium;
+    }
+
+    @font-face {
+        font-family: 'IRANSans-ultralight';
+        src: url("static/font/IRANSans(FaNum)_UltraLight.ttf");
+        font-weight: light;
+    }
+
+    .font-iransans-light {
+        font-family: 'IRANSans-light', sans-serif;
+    }
+
+    .font-iransans-bold {
+        font-family: 'IRANSans-bold', sans-serif;
+    }
+
+    .font-iransans-medium {
+        font-family: 'IRANSans-medium', sans-serif;
+    }
+
+    .font-iransans-ultralight {
+        font-family: 'IRANSans-ultralight', sans-serif;
+    }
+    body{
+        font-family:'IRANSans-medium' ;
+    }
+
+</style>
+
+<body class="font-Vazir bg-gray-100">
+    {% include 'header.html'%}
+
+    {% block content %}
+    {% endblock %}
+    
+    {% include 'footer.html'%}
+</body>
+
+</html>

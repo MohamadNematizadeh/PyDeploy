@@ -1,0 +1,65 @@
+<header class="bg-[#0EB3A2] py-4 text-white shadow-lg">
+    <div class="container mx-auto flex items-center justify-between px-6">
+        <div class="logo">
+            <img src="logo.png" alt="نیاتابش" class="w-36">
+        </div>
+
+        <button id="menu-toggle" class="lg:hidden text-white focus:outline-none transition transform hover:scale-110">
+            <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+
+        <nav id="menu" class="hidden lg:flex">
+            <ul class="flex flex-col lg:flex-row lg:gap-8 gap-4 text-lg font-semibold">
+                <li><a href="#" class="hover:text-[#F5DBB5] transition-all duration-300">خانه</a></li>
+                <li><a href="#" class="hover:text-[#F5DBB5] transition-all duration-300">محصولات</a></li>
+                <li><a href="#" class="hover:text-[#F5DBB5] transition-all duration-300">درباره ما</a></li>
+                <li><a href="http://127.0.0.1:8000/signin" class="hover:text-[#F5DBB5] transition-all duration-300">ورود و ثبت نام</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="hidden lg:flex items-center space-x-4">
+            <input type="text" placeholder="جستجو..."
+                class="p-3 rounded-lg w-56 focus:outline-none focus:ring-2 focus:ring-[#F5DBB5] shadow-md">
+            <button
+                class="bg-[#F5DBB5] text-[#0EB3A2] p-3 rounded-lg hover:bg-[#FFD89B] transition-all duration-300 shadow-md">جستجو</button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#0EB3A2] p-6 transition-all duration-300">
+        <ul class="space-y-6 text-lg font-semibold text-center">
+            <li><a href="#" class="block hover:text-[#F5DBB5] transition-all duration-300">خانه</a></li>
+            <li><a href="#" class="block hover:text-[#F5DBB5] transition-all duration-300">محصولات</a></li>
+            <li><a href="#" class="block hover:text-[#F5DBB5] transition-all duration-300">درباره ما</a></li>
+        </ul>
+    </div>
+</header>
+
+<script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("animate-fade-in");
+    });
+</script>
+
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.3s ease-in-out;
+    }
+</style>
